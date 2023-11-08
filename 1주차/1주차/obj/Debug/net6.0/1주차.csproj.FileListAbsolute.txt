@@ -1,0 +1,14 @@
+E:\UNITY_SPARTA\게임개발 Unity\1주차\1주차\bin\Debug\net6.0\1주차.exe
+E:\UNITY_SPARTA\게임개발 Unity\1주차\1주차\bin\Debug\net6.0\1주차.deps.json
+E:\UNITY_SPARTA\게임개발 Unity\1주차\1주차\bin\Debug\net6.0\1주차.runtimeconfig.json
+E:\UNITY_SPARTA\게임개발 Unity\1주차\1주차\bin\Debug\net6.0\1주차.dll
+E:\UNITY_SPARTA\게임개발 Unity\1주차\1주차\bin\Debug\net6.0\1주차.pdb
+E:\UNITY_SPARTA\게임개발 Unity\1주차\1주차\obj\Debug\net6.0\1주차.GeneratedMSBuildEditorConfig.editorconfig
+E:\UNITY_SPARTA\게임개발 Unity\1주차\1주차\obj\Debug\net6.0\1주차.AssemblyInfoInputs.cache
+E:\UNITY_SPARTA\게임개발 Unity\1주차\1주차\obj\Debug\net6.0\1주차.AssemblyInfo.cs
+E:\UNITY_SPARTA\게임개발 Unity\1주차\1주차\obj\Debug\net6.0\1주차.csproj.CoreCompileInputs.cache
+E:\UNITY_SPARTA\게임개발 Unity\1주차\1주차\obj\Debug\net6.0\1주차.dll
+E:\UNITY_SPARTA\게임개발 Unity\1주차\1주차\obj\Debug\net6.0\refint\1주차.dll
+E:\UNITY_SPARTA\게임개발 Unity\1주차\1주차\obj\Debug\net6.0\1주차.pdb
+E:\UNITY_SPARTA\게임개발 Unity\1주차\1주차\obj\Debug\net6.0\1주차.genruntimeconfig.cache
+E:\UNITY_SPARTA\게임개발 Unity\1주차\1주차\obj\Debug\net6.0\ref\1주차.dll
