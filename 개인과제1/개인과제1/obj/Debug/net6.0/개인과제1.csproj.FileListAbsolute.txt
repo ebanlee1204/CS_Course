@@ -1,0 +1,14 @@
+E:\Documents\GitHub\CS_Course\개인과제1\개인과제1\bin\Debug\net6.0\개인과제1.exe
+E:\Documents\GitHub\CS_Course\개인과제1\개인과제1\bin\Debug\net6.0\개인과제1.deps.json
+E:\Documents\GitHub\CS_Course\개인과제1\개인과제1\bin\Debug\net6.0\개인과제1.runtimeconfig.json
+E:\Documents\GitHub\CS_Course\개인과제1\개인과제1\bin\Debug\net6.0\개인과제1.dll
+E:\Documents\GitHub\CS_Course\개인과제1\개인과제1\bin\Debug\net6.0\개인과제1.pdb
+E:\Documents\GitHub\CS_Course\개인과제1\개인과제1\obj\Debug\net6.0\개인과제1.GeneratedMSBuildEditorConfig.editorconfig
+E:\Documents\GitHub\CS_Course\개인과제1\개인과제1\obj\Debug\net6.0\개인과제1.AssemblyInfoInputs.cache
+E:\Documents\GitHub\CS_Course\개인과제1\개인과제1\obj\Debug\net6.0\개인과제1.AssemblyInfo.cs
+E:\Documents\GitHub\CS_Course\개인과제1\개인과제1\obj\Debug\net6.0\개인과제1.csproj.CoreCompileInputs.cache
+E:\Documents\GitHub\CS_Course\개인과제1\개인과제1\obj\Debug\net6.0\개인과제1.dll
+E:\Documents\GitHub\CS_Course\개인과제1\개인과제1\obj\Debug\net6.0\refint\개인과제1.dll
+E:\Documents\GitHub\CS_Course\개인과제1\개인과제1\obj\Debug\net6.0\개인과제1.pdb
+E:\Documents\GitHub\CS_Course\개인과제1\개인과제1\obj\Debug\net6.0\개인과제1.genruntimeconfig.cache
+E:\Documents\GitHub\CS_Course\개인과제1\개인과제1\obj\Debug\net6.0\ref\개인과제1.dll
