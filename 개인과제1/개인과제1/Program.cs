@@ -243,8 +243,28 @@ namespace Week2Assign
             foreach (Item element in _items){
                 element.PrintItemDescription();
             }
+
+            Console.WriteLine("");
+            Console.WriteLine("1. 장착 관리");
+            Console.WriteLine("0. 나가기");
+            Console.WriteLine("");
+
+            // switch 활용 결과값 검증 및 이동
+            switch (GetValidInput(0, 1))
+            {
+                case 1:
+                    EquipMenu();
+                    break;
+
+                case 0:
+                    MainMenu();
+                    break;
+            }
         }
 
+        static void EquipMenu()
+        {
 
+        }
     }
 }
