@@ -49,10 +49,9 @@ namespace Week2Assign
 
         public void PrintItemDescription()
         {
-            Console.Write("- ");
             PrintEquipped();
             Console.Write(Name + "     | ");
-            PrintItemStats(); 
+            PrintItemStats();
             Console.WriteLine(Description);
         }
 
@@ -68,7 +67,7 @@ namespace Week2Assign
             }
             else
             {
-                Console.Write("  ");
+                Console.Write("   ");
             }
         }
 
@@ -168,9 +167,9 @@ namespace Week2Assign
             // 2. 숫자가 아님
             do {
                 Console.WriteLine("원하시는 행동을 입력해주세요");
-                input = Console.ReadLine(); 
+                input = Console.ReadLine();
             } while (!int.TryParse(input, out result) || result < min || result > max);
-            
+
             return result;
         }
 
@@ -240,7 +239,8 @@ namespace Week2Assign
             Console.WriteLine();
 
             Console.WriteLine("[아이템 목록]");
-            foreach (Item element in _items){
+            foreach (Item element in _items) {
+                Console.Write("- ");
                 element.PrintItemDescription();
             }
 
@@ -264,7 +264,44 @@ namespace Week2Assign
 
         static void EquipMenu()
         {
+            int i = 0;
+            Console.Clear();
 
+            PrintYellowText("인벤토리 - 장착관리");
+            Console.WriteLine("");
+            Console.WriteLine("보유 중인 아이템을 관리할 수 있습니다.");
+            Console.WriteLine();
+
+            Console.WriteLine("[아이템 목록]");
+            foreach (Item element in _items)
+            {
+                i++;
+                Console.Write("- {0} ", i);
+                element.PrintItemDescription();
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine("0. 나가기");
+            Console.WriteLine("");
+
+            int input = GetValidInput(0, i);
+
+            // switch 활용 결과값 검증 및 이동
+            switch (input)
+            {
+                case 0:
+                    Inventory();
+                    break;
+                default:
+                    ToggleEquipped(input);
+                    EquipMenu();
+                    break;
+            }
+        }
+
+        static void ToggleEquipped(int input)
+        {
+            _items[input - 1].IsEquipped = !_items[input-1].IsEquipped;
         }
     }
 }
