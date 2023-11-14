@@ -226,15 +226,15 @@ namespace Week2Assign
             Console.Write(" ");
             Console.WriteLine("{0} ( {1} )", _player.Name, _player.Job);
 
-            InsertYellowText("공격력 : ", _player.Atk.ToString("0000"));
+            InsertYellowText("공격력 : ", (_player.Atk + Item.AtkBonus).ToString("0000"));
             Item.PrintAtkBonus();
             Console.WriteLine("");
 
-            InsertYellowText("방어력 : ", _player.Def.ToString("0000"));
+            InsertYellowText("방어력 : ", (_player.Def + Item.DefBonus).ToString("0000"));
             Item.PrintDefBonus();
             Console.WriteLine("");
 
-            InsertYellowText("체  력 : ", _player.Hp.ToString("0000"));
+            InsertYellowText("체  력 : ", (_player.Hp + Item.HpBonus).ToString("0000"));
             Item.PrintHpBonus();
             Console.WriteLine("");
 
