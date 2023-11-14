@@ -34,9 +34,9 @@ namespace Week2Assign
         public int Def { get; }
         public int Hp { get; }
 
-        public bool IsEquiped { get; set; }
+        public bool IsEquipped { get; set; }
 
-        public Item(string name, string description, int type, int atk, int def, int hp, bool isEquiped = false)
+        public Item(string name, string description, int type, int atk, int def, int hp, bool isEquipped = false)
         {
             Name = name;
             Description = description;
@@ -44,14 +44,46 @@ namespace Week2Assign
             Atk = atk;
             Def = def;
             Hp = hp;
-            IsEquiped = isEquiped;
+            IsEquipped = isEquipped;
+        }
+
+        public void PrintItemDescription()
+        {
+            Console.Write("- ");
+            PrintEquipped();
+            Console.Write(Name + "     | ");
+            PrintItemStats(); 
+            Console.WriteLine(Description);
+        }
+
+        public void PrintEquipped()
+        {
+            if (IsEquipped)
+            {
+                Console.Write("[");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write("E");
+                Console.ResetColor();
+                Console.Write("]");
+            }
+            else
+            {
+                Console.Write("  ");
+            }
+        }
+
+        public void PrintItemStats()
+        {
+            if (Atk != 0) Console.Write("공격력 + " + Atk + " | ");
+            if (Def != 0) Console.Write("방어력 + " + Def + " | ");
+            if (Hp  != 0) Console.Write("체  력 + " + Hp  + " | ");
         }
     }
 
     class Program
     {
         static Character _player;
-        static List<Item> _items;
+        static List<Item> _items = new List<Item>();
 
         static void Main(string[] args)
         {
@@ -67,10 +99,10 @@ namespace Week2Assign
         static void GenerateGame()
         {
             _player = new Character("chad", "전사", 1, 10, 5, 100, 1500);
-            List<Item> _items = new List<Item>();
 
-            _items.Add(new Item("무쇠갑옷", "무쇠로 만들어져 튼튼한 갑옷입니다.", 0, 0, 5, 0));
-            _items.Add(new Item("낡은 검", "쉽게 볼 수 있는 낡은 검입니다.", 1, 2, 0, 0));
+
+            _items.Add(new Item("무쇠 갑옷", "무쇠로 만들어져 튼튼한 갑옷입니다.", 0, 0, 5, 0));
+            _items.Add(new Item("낡은   검", "쉽게 볼 수 있는 낡은 검입니다.", 1, 2, 0, 0));
             _items.Add(new Item("골든 헬름", "희귀한 광석으로 만들어진 투구입니다.", 1, 0, 9, 0));
         }
 
@@ -200,7 +232,19 @@ namespace Week2Assign
 
         static void Inventory()
         {
+            Console.Clear();
 
+            PrintYellowText("인벤토리");
+            Console.WriteLine("");
+            Console.WriteLine("보유 중인 아이템을 관리할 수 있습니다.");
+            Console.WriteLine();
+
+            Console.WriteLine("[아이템 목록]");
+            foreach (Item element in _items){
+                element.PrintItemDescription();
+            }
         }
+
+
     }
 }
