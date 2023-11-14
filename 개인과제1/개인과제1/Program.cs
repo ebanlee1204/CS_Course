@@ -5,22 +5,22 @@ namespace Week2Assign
 {
     public class Character
     {
-        public string Name { get; } // 왜 public ??
-        public string Job { get; }
-        public int Lvl { get; }
-        public int Atk { get; }
-        public int Def { get; }
-        public int Hp { get; }
+        public string Name { get; }
+        public string Job  { get; }
+        public int Lvl  { get; }
+        public int Atk  { get; }
+        public int Def  { get; }
+        public int Hp   { get; }
         public int Gold { get; }
 
         public Character(string name, string job, int lvl, int atk, int def, int hp, int gold)
         {
             Name = name;
-            Job = job;
-            Lvl = lvl;
-            Atk = atk;
-            Def = def;
-            Hp = hp;
+            Job  = job;
+            Lvl  = lvl;
+            Atk  = atk;
+            Def  = def;
+            Hp   = hp;
             Gold = gold;
         }
     }
@@ -30,9 +30,9 @@ namespace Week2Assign
         public string Name { get; }
         public string Description { get; }
         public int Type { get; }
-        public int Atk { get; }
-        public int Def { get; }
-        public int Hp { get; }
+        public int Atk  { get; }
+        public int Def  { get; }
+        public int Hp   { get; }
 
         public bool IsEquipped { get; set; }
 
@@ -45,9 +45,9 @@ namespace Week2Assign
             Name = name;
             Description = description;
             Type = type;
-            Atk = atk;
-            Def = def;
-            Hp = hp;
+            Atk  = atk;
+            Def  = def;
+            Hp   = hp;
             IsEquipped = isEquipped;
         }
 
