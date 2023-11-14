@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Week2Assign
 {
@@ -113,19 +114,19 @@ namespace Week2Assign
             Console.WriteLine("");
 
             // switch 활용 결과값 검증 및 이동
-            switch (IsValidInput(1, 2))
+            switch (GetValidInput(1, 2))
             {
-                case 1: 
-                    Console.WriteLine("Pressed 1");
+                case 1:
+                    StatusMenu();
                     break;
 
-                case 2: 
-                    Console.WriteLine("Pressed 2");
+                case 2:
+                    Inventory();
                     break;
             }
         }
 
-        static int IsValidInput(int min, int max)
+        static int GetValidInput(int min, int max)
         {
             string input;
             int result;
@@ -140,7 +141,66 @@ namespace Week2Assign
             
             return result;
         }
+
+        static void StatusMenu()
+        {
+            Console.Clear();
+
+            PrintYellowText("■ 상태 보기 ■");
+            Console.WriteLine("");
+            Console.WriteLine("캐릭터의 정보가 표기됩니다.");
+            Console.WriteLine("");
+
+            Console.Write("Lv. ");
+            PrintYellowText(_player.Lvl.ToString("00"));
+            Console.Write(" ");
+            Console.WriteLine("{0} ( {1} )", _player.Name, _player.Job);
+
+            InsertYellowText("공격력 : ", _player.Atk.ToString("0000"));
+            Console.WriteLine("");
+
+            InsertYellowText("방어력 : ", _player.Def.ToString("0000"));
+            Console.WriteLine("");
+
+            InsertYellowText("체  력 : ", _player.Hp.ToString("0000"));
+            Console.WriteLine("");
+
+            InsertYellowText("골  드 : ", _player.Gold.ToString("0000"));
+            Console.WriteLine("");
+            Console.WriteLine("");
+
+            PrintYellowText("0. ");
+            Console.WriteLine("나가기");
+            Console.WriteLine("");
+
+            // switch 활용 결과값 검증 및 이동
+            switch (GetValidInput(0, 0))
+            {
+                case 0:
+                    MainMenu();
+                    break;
+            }
+        }
+
+        static void PrintYellowText(string txt)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(txt);
+            Console.ResetColor();
+        }
+
+        static void InsertYellowText(string txt1, string txt2, string txt3 = "")
+        {
+            Console.Write(txt1);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(txt2);
+            Console.ResetColor();
+            Console.Write(txt3);
+        }
+
+        static void Inventory()
+        {
+
+        }
     }
-
-
 }
