@@ -36,6 +36,10 @@ namespace Week2Assign
 
         public bool IsEquipped { get; set; }
 
+        public static int AtkBonus { get; set; }
+        public static int DefBonus { get; set; }
+        public static int HpBonus  { get; set; }
+
         public Item(string name, string description, int type, int atk, int def, int hp, bool isEquipped = false)
         {
             Name = name;
@@ -77,6 +81,42 @@ namespace Week2Assign
             if (Def != 0) Console.Write("방어력 + " + Def + " | ");
             if (Hp  != 0) Console.Write("체  력 + " + Hp  + " | ");
         }
+
+        public void AddBonus()
+        {
+            if (Atk != 0) AtkBonus += Atk;
+            if (Def != 0) DefBonus += Def;
+            if (Hp  != 0) HpBonus  += Hp ;
+        }
+
+        public void RemoveBonus()
+        {
+            if (Atk != 0) AtkBonus -= Atk; 
+            if (Def != 0) DefBonus -= Def;
+            if (Hp  != 0) HpBonus  -= Hp ;
+        }
+
+        public static void PrintAtkBonus()
+        {
+            if (AtkBonus == 0) return;
+            Console.Write(" (+");
+            Console.Write(AtkBonus.ToString("00"));
+            Console.Write(")");
+        }
+        public static void PrintDefBonus()
+        {
+            if (DefBonus == 0) return;
+            Console.Write(" (+");
+            Console.Write(DefBonus.ToString("00"));
+            Console.Write(")");
+        }
+        public static void PrintHpBonus()
+        {
+            if (HpBonus == 0) return;
+            Console.Write(" (+");
+            Console.Write(HpBonus.ToString("00"));
+            Console.Write(")");
+        }
     }
 
     class Program
@@ -98,7 +138,6 @@ namespace Week2Assign
         static void GenerateGame()
         {
             _player = new Character("chad", "전사", 1, 10, 5, 100, 1500);
-
 
             _items.Add(new Item("무쇠 갑옷", "무쇠로 만들어져 튼튼한 갑옷입니다.", 0, 0, 5, 0));
             _items.Add(new Item("낡은   검", "쉽게 볼 수 있는 낡은 검입니다.", 1, 2, 0, 0));
@@ -188,12 +227,15 @@ namespace Week2Assign
             Console.WriteLine("{0} ( {1} )", _player.Name, _player.Job);
 
             InsertYellowText("공격력 : ", _player.Atk.ToString("0000"));
+            Item.PrintAtkBonus();
             Console.WriteLine("");
 
             InsertYellowText("방어력 : ", _player.Def.ToString("0000"));
+            Item.PrintDefBonus();
             Console.WriteLine("");
 
             InsertYellowText("체  력 : ", _player.Hp.ToString("0000"));
+            Item.PrintHpBonus();
             Console.WriteLine("");
 
             InsertYellowText("골  드 : ", _player.Gold.ToString("0000"));
@@ -302,6 +344,8 @@ namespace Week2Assign
         static void ToggleEquipped(int input)
         {
             _items[input - 1].IsEquipped = !_items[input-1].IsEquipped;
+            if (_items[input - 1].IsEquipped) { _items[input - 1].AddBonus(); }
+            if (!_items[input - 1].IsEquipped) { _items[input - 1].RemoveBonus(); }
         }
     }
 }
